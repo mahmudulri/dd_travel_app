@@ -1,4 +1,5 @@
 import 'package:dd_travel_app/screens/getstarted_screen.dart';
+import 'package:dd_travel_app/homescreen/home_screen.dart';
 import 'package:dd_travel_app/screens/social_login.dart';
 import 'package:get/get.dart';
 
@@ -9,6 +10,7 @@ const String splashScreen = '/splash-screen';
 const String getStartedScreen = '/getStarted-screen';
 const String socialLoginScreen = '/social-login-screen';
 const String loginScreen = '/login-screen';
+const String homeScreen = '/home-screen';
 
 List<GetPage> getPages = [
   GetPage(
@@ -26,5 +28,9 @@ List<GetPage> getPages = [
   GetPage(
     name: loginScreen,
     page: () => LogInScreen(),
+  ),
+  GetPage(
+    name: homeScreen,
+    page: () => HomeScreen(),
   ),
 ];
