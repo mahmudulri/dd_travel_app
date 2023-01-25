@@ -1,4 +1,6 @@
+import 'package:dd_travel_app/homescreen/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../const/app_colors.dart';
@@ -68,7 +70,9 @@ class LogInScreen extends StatelessWidget {
                       height: screenHeight * 0.03,
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Get.to(() => HomeScreen());
+                      },
                       child: Container(
                         margin: EdgeInsets.symmetric(horizontal: 120),
                         width: screenWidth,

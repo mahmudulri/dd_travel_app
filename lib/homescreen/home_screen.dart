@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
                     margin: EdgeInsets.only(
                       top: 30,
                     ),
-                    height: 150,
+                    // height: 150,
                     width: screenWidth,
                     decoration: BoxDecoration(
                         // color: Colors.blueGrey,
@@ -117,82 +117,113 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                   ),
+                  SizedBox(
+                    height: screenHeight * 0.010,
+                  ),
 
                   // ...............Search bar ///////////////////
 
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 20),
+                  SizedBox(
                     height: screenHeight * 0.080,
                     width: screenWidth,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      // borderRadius: BorderRadius.circular(15),
+                    // color: Colors.grey,
+                    child: Row(
+                      children: [
+                        Expanded(
+                          flex: 3,
+                          child: Container(
+                            padding: EdgeInsets.symmetric(horizontal: 20),
+                            height: screenHeight * 0.080,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(20)),
+                            child: Row(
+                              children: [
+                                Text(
+                                  "Where do you wanna go ?",
+                                  style: GoogleFonts.roboto(
+                                    color: Color(0xff9C9C9C),
+                                    fontWeight: FontWeight.w400,
+                                    // fontSize: screenWidth * 0.030,
+                                    fontSize: screenWidth * 0.035,
+                                  ),
+                                ),
+                                Spacer(),
+                                Icon(
+                                  Icons.arrow_forward,
+                                  color: Color(0xff08BA64),
+                                  size: screenWidth * 0.08,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: screenWidth * 0.040,
+                        ),
+                        Expanded(
+                          flex: 1,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Color(0xff08BA64),
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  "assets/images/emergency.png",
+                                  height: 25,
+                                  width: 25,
+                                ),
+                                Text(
+                                  "Emergency",
+                                  style: GoogleFonts.roboto(
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: screenHeight * 0.012,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                    child: Container(
-                      color: Color(0xffF7F7F7),
-                      child: Row(
-                        children: [
-                          Expanded(
-                            flex: 3,
-                            child: Container(
-                              padding: EdgeInsets.symmetric(horizontal: 10),
-                              height: screenHeight * 0.080,
+                  ),
+
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    height: 120,
+                    width: screenWidth,
+                    // color: Colors.grey,
+                    child: ListView.separated(
+                      physics: BouncingScrollPhysics(),
+                      separatorBuilder: (context, index) {
+                        return SizedBox(
+                          width: 8,
+                        );
+                      },
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 10,
+                      itemBuilder: (context, index) {
+                        return Column(
+                          children: [
+                            Container(
+                              height: 80,
+                              width: 80,
                               decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(20)),
-                              child: Row(
-                                children: [
-                                  Text(
-                                    "Where do you wanna go ?",
-                                    style: GoogleFonts.roboto(
-                                      color: Color(0xff9C9C9C),
-                                      fontWeight: FontWeight.w400,
-                                      // fontSize: screenWidth * 0.030,
-                                      fontSize: screenWidth * .030,
-                                    ),
-                                  ),
-                                  Spacer(),
-                                  Icon(
-                                    Icons.arrow_forward,
-                                    color: Color(0xff08BA64),
-                                    size: screenWidth * 0.08,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Expanded(
-                            flex: 1,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: Color(0xff08BA64),
                                 borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Image.asset(
-                                    "assets/images/emergency.png",
-                                    height: 25,
-                                    width: 25,
-                                  ),
-                                  Text(
-                                    "Emergency",
-                                    style: GoogleFonts.roboto(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: screenHeight * 0.010,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ],
+                                color: Colors.white,
                               ),
                             ),
-                          ),
-                        ],
-                      ),
+                            Text("Hotel"),
+                          ],
+                        );
+                      },
                     ),
                   ),
                 ],
