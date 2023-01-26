@@ -16,6 +16,7 @@ class HomeScreen extends StatelessWidget {
           body: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: SingleChildScrollView(
+              physics: BouncingScrollPhysics(),
               child: Column(
                 children: [
                   Container(
@@ -195,41 +196,197 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(
                     height: 10,
                   ),
+                  //////////......................Categories...........................//
+                  ///
                   Container(
                     height: 120,
                     width: screenWidth,
-                    // color: Colors.grey,
-                    child: ListView.separated(
+                    child: SingleChildScrollView(
                       physics: BouncingScrollPhysics(),
-                      separatorBuilder: (context, index) {
-                        return SizedBox(
-                          width: 8,
-                        );
-                      },
-                      shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
-                      itemCount: 10,
-                      itemBuilder: (context, index) {
-                        return Column(
-                          children: [
-                            Container(
-                              height: 80,
-                              width: 80,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                color: Colors.white,
-                              ),
-                            ),
-                            Text("Hotel"),
-                          ],
-                        );
-                      },
+                      child: Row(
+                        children: [
+                          democategories(
+                              "assets/images/categories_images/1.png", "Hotel"),
+                          democategories(
+                              "assets/images/categories_images/2.png",
+                              "Resturatnt"),
+                          democategories(
+                              "assets/images/categories_images/3.png",
+                              "Cruise"),
+                          democategories(
+                              "assets/images/categories_images/4.png",
+                              "Flight"),
+                          democategories(
+                              "assets/images/categories_images/1.png", "Hotel"),
+                          democategories(
+                              "assets/images/categories_images/2.png",
+                              "Resturatnt"),
+                          democategories(
+                              "assets/images/categories_images/3.png",
+                              "Cruise"),
+                          democategories(
+                              "assets/images/categories_images/4.png",
+                              "Flight"),
+                        ],
+                      ),
                     ),
+                  ),
+
+                  // Container(
+                  //   height: 120,
+                  //   width: screenWidth,
+                  //   // color: Colors.grey,
+                  //   child: ListView.separated(
+                  //     physics: BouncingScrollPhysics(),
+                  //     separatorBuilder: (context, index) {
+                  //       return SizedBox(
+                  //         width: 8,
+                  //       );
+                  //     },
+                  //     shrinkWrap: true,
+                  //     scrollDirection: Axis.horizontal,
+                  //     itemCount: 6,
+                  //     itemBuilder: (context, index) {
+                  //       return Column(
+                  //         children: [
+                  //           Container(
+                  //             height: 70,
+                  //             width: 70,
+                  //             decoration: BoxDecoration(
+                  //               borderRadius: BorderRadius.circular(20),
+                  //               color: Colors.white,
+                  //             ),
+                  //             child: Padding(
+                  //               padding: const EdgeInsets.all(12.0),
+                  //               child: Image.asset(
+                  //                   "assets/images/categories_images/1.png"),
+                  //             ),
+                  //           ),
+                  //           Text("Hotel"),
+                  //         ],
+                  //       );
+                  //     },
+                  //   ),
+                  // ),
+
+                  //  ...................................................Ads section...................//
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Offers for you",
+                            style: GoogleFonts.roboto(
+                              fontWeight: FontWeight.w500,
+                              fontSize: screenWidth * 0.050,
+                              color: Color(0xff131B1A),
+                            ),
+                          ),
+                          Container(
+                            height: 2,
+                            width: 60,
+                            color: Color(0xffD0D0D0),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Icon(
+                            Icons.arrow_forward,
+                            color: Color(0xffD0D0D0),
+                            size: 35,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 300,
+                    // width: screenWidth,
+                    child: Image.asset(
+                      "assets/images/ads.png",
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  //...............................Popular Deals...................//
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Popular Deals",
+                            style: GoogleFonts.roboto(
+                              fontWeight: FontWeight.w500,
+                              fontSize: screenWidth * 0.050,
+                              color: Color(0xff131B1A),
+                            ),
+                          ),
+                          Container(
+                            height: 2,
+                            width: 60,
+                            color: Color(0xffD0D0D0),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Icon(
+                            Icons.arrow_forward,
+                            color: Color(0xffD0D0D0),
+                            size: 35,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 180,
+                    width: screenWidth,
+                    child: Image.asset(
+                      "assets/images/populardeals.png",
+                      fit: BoxFit.fitWidth,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 50,
                   ),
                 ],
               ),
             ),
           )),
+    );
+  }
+
+  Widget democategories(String imagename, String catName) {
+    return Column(
+      children: [
+        Container(
+          margin: EdgeInsets.only(right: 10),
+          height: 70,
+          width: 70,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            color: Colors.white,
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Image.asset(imagename),
+          ),
+        ),
+        Text(
+          catName,
+          style: GoogleFonts.roboto(
+            fontWeight: FontWeight.w400,
+            color: Color(0xff9C9C9C),
+            fontSize: 12,
+          ),
+        ),
+      ],
     );
   }
 }
