@@ -1,7 +1,8 @@
 import 'package:dd_travel_app/screens/draft.dart';
 import 'package:dd_travel_app/screens/getstarted_screen.dart';
-import 'package:dd_travel_app/homescreen/home_screen.dart';
+import 'package:dd_travel_app/screens/homescreen/home_screen.dart';
 import 'package:dd_travel_app/screens/login_screen.dart';
+import 'package:dd_travel_app/screens/profilescreen/profile_screen.dart';
 import 'package:dd_travel_app/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -24,8 +25,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: homeScreen,
-      getPages: getPages,
+      // initialRoute: splashScreen,
+      // getPages: getPages,
       home: HomeScreen(),
     );
   }

@@ -1,4 +1,5 @@
-import 'package:dd_travel_app/homescreen/home_screen.dart';
+import 'package:dd_travel_app/routes/route.dart';
+import 'package:dd_travel_app/screens/homescreen/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -71,7 +72,7 @@ class LogInScreen extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {
-                        Get.to(() => HomeScreen());
+                        Get.toNamed(profileScreen);
                       },
                       child: Container(
                         margin: EdgeInsets.symmetric(horizontal: 120),

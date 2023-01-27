@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../const/app_colors.dart';
+import 'package:flutter_carousel_slider/carousel_slider.dart';
+import '../../const/app_colors.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -31,9 +31,24 @@ class HomeScreen extends StatelessWidget {
                     child: Row(
                       children: [
                         CircleAvatar(
-                          backgroundColor: Color(0xffF7F7F7),
-                          radius: 40,
-                          child: Image.asset("assets/images/profile.png"),
+                          backgroundImage:
+                              AssetImage("assets/images/profile.png"),
+                          radius: 35,
+                          // child: Stack(
+                          //   children: [
+                          //   Align(
+                          //     alignment: Alignment.bottomRight,
+                          //     child: CircleAvatar(
+                          //       radius: 16,
+                          //       backgroundColor: Colors.white,
+                          //       child: Icon(
+                          //         Icons.camera_alt_outlined,
+                          //         color: Color(0xffD0D0D0),
+                          //       ),
+                          //     ),
+                          //   ),
+                          // ]
+                          // ),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 10),
@@ -285,6 +300,9 @@ class HomeScreen extends StatelessWidget {
                               color: Color(0xff131B1A),
                             ),
                           ),
+                          SizedBox(
+                            height: 5,
+                          ),
                           Container(
                             height: 2,
                             width: 60,
@@ -303,14 +321,32 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(
-                    height: 300,
-                    // width: screenWidth,
-                    child: Image.asset(
-                      "assets/images/ads.png",
-                      fit: BoxFit.cover,
+
+                  Container(
+                    height: 230,
+                    child: CarouselSlider.builder(
+                      slideBuilder: (index) {
+                        return Container(
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage(
+                                "assets/images/ads.png",
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        );
+                      },
+                      slideIndicator: CircularSlideIndicator(
+                        currentIndicatorColor: Colors.white,
+                        padding: EdgeInsets.only(bottom: 35),
+                        indicatorBorderColor: Colors.white,
+                      ),
+                      itemCount: 4,
+                      initialPage: 0,
                     ),
                   ),
+
                   //...............................Popular Deals...................//
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -326,6 +362,9 @@ class HomeScreen extends StatelessWidget {
                               color: Color(0xff131B1A),
                             ),
                           ),
+                          SizedBox(
+                            height: 5,
+                          ),
                           Container(
                             height: 2,
                             width: 60,
@@ -344,14 +383,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(
-                    height: 180,
-                    width: screenWidth,
-                    child: Image.asset(
-                      "assets/images/populardeals.png",
-                      fit: BoxFit.fitWidth,
-                    ),
-                  ),
+
                   SizedBox(
                     height: 50,
                   ),
