@@ -363,12 +363,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
             ),
           ),
-          VerticalDivider(
-            indent: 8,
-            endIndent: 8,
-            thickness: 2,
-            color: Colors.red,
-          ),
           Expanded(
             flex: 3,
             child: Container(
