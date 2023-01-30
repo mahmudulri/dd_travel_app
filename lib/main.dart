@@ -1,7 +1,8 @@
+import 'package:dd_travel_app/screens/bottomnav/bottomnav.dart';
 import 'package:dd_travel_app/screens/draft.dart';
-import 'package:dd_travel_app/screens/getstarted_screen.dart';
+import 'package:dd_travel_app/screens/auth/getstarted_screen.dart';
 import 'package:dd_travel_app/screens/homescreen/home_screen.dart';
-import 'package:dd_travel_app/screens/login_screen.dart';
+import 'package:dd_travel_app/screens/auth/login_screen.dart';
 import 'package:dd_travel_app/screens/profilescreen/profile_screen.dart';
 import 'package:dd_travel_app/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
       ),
       // initialRoute: splashScreen,
       // getPages: getPages,
-      home: HomeScreen(),
+      home: BottomNavScreen(),
     );
   }
 }

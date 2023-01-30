@@ -35,21 +35,6 @@ class HomeScreen extends StatelessWidget {
                         backgroundImage:
                             AssetImage("assets/images/profile.png"),
                         radius: 35,
-                        // child: Stack(
-                        //   children: [
-                        //   Align(
-                        //     alignment: Alignment.bottomRight,
-                        //     child: CircleAvatar(
-                        //       radius: 16,
-                        //       backgroundColor: Colors.white,
-                        //       child: Icon(
-                        //         Icons.camera_alt_outlined,
-                        //         color: Color(0xffD0D0D0),
-                        //       ),
-                        //     ),
-                        //   ),
-                        // ]
-                        // ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 10),
@@ -141,29 +126,46 @@ class HomeScreen extends StatelessWidget {
                 // ...............Search bar ///////////////////
 
                 SizedBox(
-                  height: screenHeight * 0.080,
+                  height: screenHeight * 0.055,
                   width: screenWidth,
                   // color: Colors.grey,
                   child: Row(
                     children: [
                       Expanded(
-                        flex: 3,
+                        flex: 5,
                         child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
-                          height: screenHeight * 0.080,
+                          padding: EdgeInsets.symmetric(horizontal: 15),
+                          height: screenHeight * 0.055,
                           decoration: BoxDecoration(
                               color: Colors.white,
-                              borderRadius: BorderRadius.circular(20)),
+                              borderRadius: BorderRadius.circular(10)),
                           child: Row(
                             children: [
-                              Text(
-                                "Where do you wanna go ?",
-                                style: GoogleFonts.roboto(
-                                  color: Color(0xff9C9C9C),
-                                  fontWeight: FontWeight.w400,
-                                  // fontSize: screenWidth * 0.030,
-                                  fontSize: screenWidth * 0.035,
+                              Container(
+                                height: screenHeight * 0.055,
+                                width: screenWidth * 0.50,
+                                child: TextField(
+                                  maxLines: 3,
+                                  decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    hintText: "Where do you wanna go ?",
+                                    hintStyle: GoogleFonts.roboto(
+                                      color: Color(0xff9C9C9C),
+                                      fontWeight: FontWeight.w400,
+                                      // fontSize: screenWidth * 0.030,
+                                      fontSize: screenWidth * 0.035,
+                                    ),
+                                  ),
                                 ),
+                                // child: Text(
+                                //   "Where do you wanna go ?",
+                                //   style: GoogleFonts.roboto(
+                                //     color: Color(0xff9C9C9C),
+                                //     fontWeight: FontWeight.w400,
+                                //     // fontSize: screenWidth * 0.030,
+                                //     fontSize: screenWidth * 0.035,
+                                //   ),
+                                // ),
                               ),
                               Spacer(),
                               Icon(
@@ -183,7 +185,7 @@ class HomeScreen extends StatelessWidget {
                         child: Container(
                           decoration: BoxDecoration(
                             color: Color(0xff08BA64),
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(10),
                           ),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -197,7 +199,7 @@ class HomeScreen extends StatelessWidget {
                                 "Emergency",
                                 style: GoogleFonts.roboto(
                                   fontWeight: FontWeight.w400,
-                                  fontSize: screenHeight * 0.012,
+                                  fontSize: screenHeight * 0.010,
                                   color: Colors.white,
                                 ),
                               ),
@@ -214,16 +216,16 @@ class HomeScreen extends StatelessWidget {
                 ),
                 //////////......................Categories...........................//
                 ///
-                Container(
-                  height: 120,
+                SizedBox(
+                  // color: Colors.red,
                   width: screenWidth,
                   child: SingleChildScrollView(
                     physics: BouncingScrollPhysics(),
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
-                        democategories(
-                            "assets/images/categories_images/1.png", "Hotel"),
+                        democategories("assets/images/categories_images/1.png",
+                            "Hotel/Resort"),
                         democategories("assets/images/categories_images/2.png",
                             "Resturatnt"),
                         democategories(
@@ -243,44 +245,11 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
 
-                // Container(
-                //   height: 120,
-                //   width: screenWidth,
-                //   // color: Colors.grey,
-                //   child: ListView.separated(
-                //     physics: BouncingScrollPhysics(),
-                //     separatorBuilder: (context, index) {
-                //       return SizedBox(
-                //         width: 8,
-                //       );
-                //     },
-                //     shrinkWrap: true,
-                //     scrollDirection: Axis.horizontal,
-                //     itemCount: 6,
-                //     itemBuilder: (context, index) {
-                //       return Column(
-                //         children: [
-                //           Container(
-                //             height: 70,
-                //             width: 70,
-                //             decoration: BoxDecoration(
-                //               borderRadius: BorderRadius.circular(20),
-                //               color: Colors.white,
-                //             ),
-                //             child: Padding(
-                //               padding: const EdgeInsets.all(12.0),
-                //               child: Image.asset(
-                //                   "assets/images/categories_images/1.png"),
-                //             ),
-                //           ),
-                //           Text("Hotel"),
-                //         ],
-                //       );
-                //     },
-                //   ),
-                // ),
-
                 //  ...................................................Ads section...................//
+
+                SizedBox(
+                  height: screenHeight * 0.020,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -381,7 +350,40 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(
                   height: screenHeight * 0.020,
                 ),
-                PopularDeals(),
+                PopularDeals(
+                  hotelName: "Seagull Hotel",
+                  locationName: "Cox,s Bazaar",
+                  mainPrice: 12000,
+                  discontPrice: 6000,
+                  discont: "50%",
+                  reviews: 120,
+                  initialRating: 5,
+                ),
+                SizedBox(
+                  height: screenHeight * 0.020,
+                ),
+                PopularDeals(
+                  hotelName: "Vistabay Resort",
+                  locationName: "Chattagram",
+                  mainPrice: 20000,
+                  discontPrice: 12000,
+                  discont: "40%",
+                  reviews: 131,
+                  initialRating: 3,
+                ),
+                SizedBox(
+                  height: screenHeight * 0.020,
+                ),
+                PopularDeals(
+                  hotelName: "Abc Hotel Service",
+                  locationName: "Dhaka",
+                  mainPrice: 10000,
+                  discontPrice: 4000,
+                  discont: "60%",
+                  reviews: 111,
+                  initialRating: 4,
+                ),
+
                 SizedBox(
                   height: screenHeight * 0.060,
                 ),
@@ -398,8 +400,8 @@ class HomeScreen extends StatelessWidget {
       children: [
         Container(
           margin: EdgeInsets.only(right: 10),
-          height: 70,
-          width: 70,
+          height: 80,
+          width: 80,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             color: Colors.white,
@@ -409,12 +411,15 @@ class HomeScreen extends StatelessWidget {
             child: Image.asset(imagename),
           ),
         ),
+        SizedBox(
+          height: 3,
+        ),
         Text(
           catName,
           style: GoogleFonts.roboto(
             fontWeight: FontWeight.w400,
             color: Color(0xff9C9C9C),
-            fontSize: 12,
+            fontSize: 10,
           ),
         ),
       ],

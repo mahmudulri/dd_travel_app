@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../const/app_colors.dart';
+import '../../const/app_colors.dart';
 
 class LogInScreen extends StatelessWidget {
   const LogInScreen({super.key});

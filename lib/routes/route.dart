@@ -1,9 +1,9 @@
-import 'package:dd_travel_app/screens/getstarted_screen.dart';
+import 'package:dd_travel_app/screens/auth/getstarted_screen.dart';
 import 'package:dd_travel_app/screens/homescreen/home_screen.dart';
-import 'package:dd_travel_app/screens/social_login.dart';
+import 'package:dd_travel_app/screens/auth/social_login.dart';
 import 'package:get/get.dart';
 
-import '../screens/login_screen.dart';
+import '../screens/auth/login_screen.dart';
 import '../screens/profilescreen/profile_screen.dart';
 import '../screens/splash_screen.dart';
 

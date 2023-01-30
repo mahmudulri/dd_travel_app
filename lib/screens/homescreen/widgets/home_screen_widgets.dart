@@ -3,10 +3,28 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PopularDeals extends StatelessWidget {
-  const PopularDeals({super.key});
+  String hotelName;
+  String locationName;
+  int mainPrice;
+  int discontPrice;
+  String discont;
+  int reviews;
+  int initialRating;
+  PopularDeals({
+    super.key,
+    required this.hotelName,
+    required this.locationName,
+    required this.mainPrice,
+    required this.discontPrice,
+    required this.discont,
+    required this.reviews,
+    required this.initialRating,
+  });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(
+    BuildContext context,
+  ) {
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
     return Container(
@@ -52,12 +70,15 @@ class PopularDeals extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(left: 5),
                         child: Text(
-                          "Seagull Hotel",
+                          hotelName,
                           style: GoogleFonts.roboto(
                             fontWeight: FontWeight.w500,
                             color: Color(0xff131B1A),
                           ),
                         ),
+                      ),
+                      SizedBox(
+                        height: screenHeight * 0.005,
                       ),
                       Row(
                         children: [
@@ -67,13 +88,16 @@ class PopularDeals extends StatelessWidget {
                             color: Color(0xff9C9C9C),
                           ),
                           Text(
-                            "Cox's Bazaar",
+                            locationName,
                             style: GoogleFonts.roboto(
                               fontWeight: FontWeight.w400,
                               color: Color(0xff9C9C9C),
                             ),
                           )
                         ],
+                      ),
+                      SizedBox(
+                        height: screenHeight * 0.005,
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 5),
@@ -122,7 +146,7 @@ class PopularDeals extends StatelessWidget {
                       Spacer(),
                       Container(
                         child: RatingBar.builder(
-                          initialRating: 5,
+                          initialRating: initialRating.toDouble(),
                           minRating: 1,
                           direction: Axis.horizontal,
                           // allowHalfRating: true,
@@ -139,7 +163,7 @@ class PopularDeals extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        "131 Reviews",
+                        "$reviews Reviews",
                         style: GoogleFonts.roboto(
                           fontWeight: FontWeight.w300,
                           color: Color(0xff9C9C9C),
@@ -165,7 +189,7 @@ class PopularDeals extends StatelessWidget {
                         ),
                         child: Center(
                           child: Text(
-                            "50%",
+                            discont,
                             style: GoogleFonts.roboto(
                               fontWeight: FontWeight.w700,
                               fontSize: screenWidth * 0.03,
@@ -188,15 +212,16 @@ class PopularDeals extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                "6000 tk",
+                                "$discontPrice tk",
                                 style: GoogleFonts.roboto(
                                   fontWeight: FontWeight.w700,
                                   color: Color(0xff08BA64),
                                 ),
                               ),
                               Text(
-                                "12000 tk",
+                                "$mainPrice tk",
                                 style: GoogleFonts.roboto(
+                                  decoration: TextDecoration.lineThrough,
                                   fontWeight: FontWeight.w300,
                                   color: Color(0xff08BA64),
                                 ),

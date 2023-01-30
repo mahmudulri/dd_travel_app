@@ -1,10 +1,10 @@
 import 'package:dd_travel_app/routes/route.dart';
-import 'package:dd_travel_app/screens/social_login.dart';
+import 'package:dd_travel_app/screens/auth/social_login.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../const/app_colors.dart';
+import '../../const/app_colors.dart';
 
 class GetStartedScreen extends StatelessWidget {
   const GetStartedScreen({super.key});
