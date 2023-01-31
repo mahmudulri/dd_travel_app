@@ -1,6 +1,7 @@
 import 'package:dd_travel_app/screens/bottomnav/bottomnav.dart';
 import 'package:dd_travel_app/screens/draft.dart';
 import 'package:dd_travel_app/screens/auth/getstarted_screen.dart';
+import 'package:dd_travel_app/screens/explore.dart';
 import 'package:dd_travel_app/screens/homescreen/home_screen.dart';
 import 'package:dd_travel_app/screens/auth/login_screen.dart';
 import 'package:dd_travel_app/screens/profilescreen/profile_screen.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
       ),
       // initialRoute: splashScreen,
       // getPages: getPages,
-      home: BottomNavScreen(),
+      home: ExploreScreen(),
     );
   }
 }
