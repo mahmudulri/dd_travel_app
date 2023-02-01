@@ -61,36 +61,60 @@ class _DraftPageState extends State<DraftPage> with TickerProviderStateMixin {
         // ),
         body: Column(
           children: [
-            SizedBox(
-              height: 100,
-            ),
+            // SizedBox(
+            //   height: 100,
+            // ),
             CarouselSlider(
               options: CarouselOptions(
-                aspectRatio: 6 / 4,
-                viewportFraction: 1.0,
-                enlargeCenterPage: true,
-                height: 250.0,
+                height: 300,
+                viewportFraction: 1,
+                // enlargeCenterPage: false,
               ),
-              items: [1, 2, 3, 4, 5].map((i) {
-                return Container(
-                  width: screenWidth,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(
-                        "assets/images/ads.png",
-                      ),
-                      fit: BoxFit.fitWidth,
-                    ),
-                  ),
-                  // child: Image(
-                  //   fit: BoxFit.fill,
-                  //   image: AssetImage(
-                  //     "assets/images/ads.png",
-                  //   ),
-                  // ),
-                );
-              }).toList(),
-            )
+
+              items: [
+                // Container(
+                //   width: screenWidth,
+                //   decoration: BoxDecoration(
+                //     color: Colors.transparent,
+                //     image: DecorationImage(
+                //       image: AssetImage(
+                //         "assets/images/ads.png",
+                //       ),
+                //       fit: BoxFit.fitHeight,
+                //     ),
+                //   ),
+                // ),
+              ],
+              // items: [1, 2, 3, 4, 5].map((i) {
+              //   return Container(
+              //     width: screenWidth,
+              //     decoration: BoxDecoration(
+              //       image: DecorationImage(
+              //         image: AssetImage(
+              //           "assets/images/ads.png",
+              //         ),
+              //         fit: BoxFit.fitWidth,
+              //       ),
+              //     ),
+              //     // child: Image(
+              //     //   fit: BoxFit.fill,
+              //     //   image: AssetImage(
+              //     //     "assets/images/ads.png",
+              //     //   ),
+              //     // ),
+              //   );
+              // }).toList(),
+            ),
+            // Container(
+            //   height: 350,
+            //   width: screenWidth,
+            //   decoration: BoxDecoration(
+            //     image: DecorationImage(
+            //       fit: BoxFit.cover,
+            //       image: AssetImage("assets/images/ads.png"),
+            //     ),
+            //   ),
+            // ),
           ],
         ),
       ),

@@ -1,3 +1,4 @@
+import 'package:dd_travel_app/newdemo.dart';
 import 'package:dd_travel_app/screens/bottomnav/bottomnav.dart';
 import 'package:dd_travel_app/screens/draft.dart';
 import 'package:dd_travel_app/screens/auth/getstarted_screen.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
       ),
       // initialRoute: splashScreen,
       // getPages: getPages,
-      home: DraftPage(),
+      home: BottomNavScreen(),
     );
   }
 }

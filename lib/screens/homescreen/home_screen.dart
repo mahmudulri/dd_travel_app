@@ -286,27 +286,27 @@ class HomeScreen extends StatelessWidget {
               ),
 // Slider...........................Slider ............................// Slider
               Container(
-                color: Colors.yellow,
                 width: screenWidth,
-                height: 240,
+                height: 300,
                 child: CarouselSlider.builder(
+                  viewportFraction: 1,
                   slideBuilder: (index) {
                     return Container(
                       width: screenWidth,
                       decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            "assets/images/ads.png",
+                          // image: DecorationImage(
+                          //   image: AssetImage(
+                          //     "assets/images/ads.png",
+                          //   ),
+                          //   fit: BoxFit.fitHeight,
+                          // ),
                           ),
-                          fit: BoxFit.cover,
+                      child: Image(
+                        fit: BoxFit.cover,
+                        image: AssetImage(
+                          "assets/images/ads.png",
                         ),
                       ),
-                      // child: Image(
-                      //   fit: BoxFit.fill,
-                      //   image: AssetImage(
-                      //     "assets/images/ads.png",
-                      //   ),
-                      // ),
                     );
                   },
                   slideIndicator: CircularSlideIndicator(
