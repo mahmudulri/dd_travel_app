@@ -13,6 +13,7 @@ class HomeScreen extends StatelessWidget {
     var screenWidth = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
+        extendBody: true,
         backgroundColor: Color(0xffF7F7F7),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),

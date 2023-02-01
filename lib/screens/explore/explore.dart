@@ -48,13 +48,12 @@ class ExploreScreen extends StatelessWidget {
                                     color: Colors.white,
                                   )),
                               child: Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Icon(
-                                  Icons.wb_cloudy_outlined,
-                                  color: Colors.white,
-                                  size: 40,
-                                ),
-                              ),
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Image.asset(
+                                    "assets/images/icons/cloudy.png",
+                                    height: 40,
+                                    width: 40,
+                                  )),
                             ),
                             Text(
                               'Rainy',

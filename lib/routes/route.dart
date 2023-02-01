@@ -4,7 +4,7 @@ import 'package:dd_travel_app/screens/auth/social_login.dart';
 import 'package:get/get.dart';
 
 import '../screens/auth/login_screen.dart';
-import '../screens/profilescreen/profile_screen.dart';
+import '../screens/account/account_screen.dart';
 import '../screens/splash_screen.dart';
 
 const String splashScreen = '/splash-screen';
