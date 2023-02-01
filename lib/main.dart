@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
       ),
       // initialRoute: splashScreen,
       // getPages: getPages,
-      home: BottomNavScreen(),
+      home: DraftPage(),
     );
   }
 }
