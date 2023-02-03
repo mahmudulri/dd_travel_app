@@ -1,3 +1,4 @@
+import 'package:dd_travel_app/demobottom.dart';
 import 'package:dd_travel_app/newdemo.dart';
 import 'package:dd_travel_app/screens/bottomnav/bottomnav.dart';
 import 'package:dd_travel_app/screens/draft.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
       ),
       // initialRoute: splashScreen,
       // getPages: getPages,
-      home: BottomNavScreen(),
+      home: DemoBottom(),
     );
   }
 }
