@@ -44,7 +44,7 @@ class PopularDeals extends StatelessWidget {
                   topLeft: Radius.circular(20),
                   bottomLeft: Radius.circular(20),
                 ),
-                color: Colors.red,
+                // color: Colors.red,
                 image: DecorationImage(
                   image: AssetImage(
                     "assets/images/hotel.png",
